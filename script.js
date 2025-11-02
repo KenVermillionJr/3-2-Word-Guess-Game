@@ -27,10 +27,18 @@ console.log("Chosen word:", chosenWord);
 const maskedWordElm = document.getElementById("maskedWord");
 const attemptsElm = document.getElementById("attempts");
 const guessedLettersElm = document.getElementById("guessedLetters");
-const message = document.getElementById("message")
+const message = document.getElementById("message");
 
 // 🎮 Function students will build next
 function startGame(letter) {
+
+  /* set focus on hidden input element for keyboard on mobile */
+  const kb = document.getElementById("kb");
+  // check once DOM loading us complete
+  if (kb) {
+    const kbTrigger = kb.trigger("focus");
+  }
+
 
   /* address mobile keyboard activation issue */
   // const receiveLetter = document.getElementById("maskedWord");
@@ -85,7 +93,14 @@ function updateDisplay() {
   guessedLettersElm.textContent = guessedLetters.join(', ') || 'not yet';
 
   // TEST
-  console.log(`Updating guessed letters: ${guessedLetters.join(', ')}`);
+  console.log(`Updating guessed letters: ${guessedLetters.join(', ')}`)
+
+  /* set focus on hidden input element for keyboard on mobile */
+  const kb = document.getElementById("kb");
+  // check once DOM loading us complete
+  if (kb) {
+    const kbTrigger = kb.trigger("focus");
+  }
 
 } // end function
 
