@@ -20,6 +20,8 @@ function startGame(letter) {
   receiveLetter.focus();
 
   console.log(`You pressed: ${letter}`);
+  window.alert(`You pressed: ${letter}`);
+
   // TODO:
   // 1️⃣ Build a masked string using underscores for letters not yet guessed.
   // 2️⃣ Track guessed letters and remaining attempts.
