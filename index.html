@@ -29,7 +29,7 @@
         backdrop-filter: blur(8px);
         border-radius: 16px;
         padding: 2rem;
-        width: 400px;
+        max-width: 450px;
         text-align: center;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
       }
@@ -54,6 +54,27 @@
   </head>
 
   <body>
+
+    <audio id="letterCorrect">
+      <source src="./assets/letterCorrect.mp3" type="audio/mpeg">
+      <!-- Your browser does not support the audio element. -->
+    </audio>
+
+    <audio id="letterWrong">
+      <source src="./assets/letterWrong.mp3" type="audio/mpeg">
+      <!-- Your browser does not support the audio element. -->
+    </audio>
+    
+    <audio id="youWon">
+      <source src="./assets/youWon.mp3" type="audio/mpeg">
+      <!-- Your browser does not support the audio element. -->
+    </audio>
+
+    <audio id="youLost">
+      <source src="./assets/youLost.mp3" type="audio/mpeg">
+      <!-- Your browser does not support the audio element. -->
+    </audio>
+
     <div class="game-card">
       <!-- <div style="width:0; overflow:hidden;"><input type="text" name="kb" style="opacity:0; filter:alpha(opacity=0);"></div> -->
       <h1 class="fw-bold mb-3">Word Guess Game</h1>
@@ -62,8 +83,8 @@
         Attempts left: <span id="attempts">10</span> <br />
         Guessed letters: <span id="guessedLetters">None yet</span>
       </p>     
-       <textarea class="footer" id="maskedWord" style="min-width:0; max-height:1.5rem; overflow:hidden; resize:none; border: 1px solid midnightblue; background-color:#38558a; color: white;"></textarea>
-        <p class="footer">Start typing any letter to begin!</p>
+       <!-- <textarea class="footer" id="maskedWord" style="min-width:0; max-height:1.5rem; overflow:hidden; resize:none; border: 1px solid midnightblue; background-color:#38558a; color: white;"></textarea> -->
+        <p class="footer" id="message">Start typing any letter to begin!</p>
     </div>
 
     <!-- ✅ Your game logic -->

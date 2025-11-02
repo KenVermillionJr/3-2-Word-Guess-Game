@@ -1,37 +1,118 @@
-// 🧠 Starter Word Guess Game — Keyboard Input Ready
+// Starter Word Guess Game — Keyboard Input Ready
 
 // Word bank
-var words = ["javascript", "array", "loop", "variable"];
+const words = ["javascript", "array", "loop", "json", "linux"];
 
 // Randomly select one word from the list
-var chosenWord = words[Math.floor(Math.random() * words.length)];
+let chosenWord = words[Math.floor(Math.random() * words.length)];
 
 // Track guessed letters and remaining attempts
-var guessedLetters = [];
-var attempts = 10;
+let guessedLetters = [];
+let attemptsLeft = 10;
+
+/* audio sources */
+const correct = document.querySelector('#letterCorrect')
+// correct.play()
+const wrong = document.querySelector('#letterWrong')
+// wrong.play()
+const youWon = document.querySelector('#youWon')
+// won.play()
+const lost = document.querySelector('#youLost')
+// lost.play();
 
 // Log the chosen word for debugging
 console.log("Chosen word:", chosenWord);
 
+// DOM Elements
+const maskedWordElm = document.getElementById("maskedWord");
+const attemptsElm = document.getElementById("attempts");
+const guessedLettersElm = document.getElementById("guessedLetters");
+const message = document.getElementById("message")
+
 // 🎮 Function students will build next
 function startGame(letter) {
 
-  const receiveLetter = document.getElementById("maskedWord");
-  receiveLetter.focus();
+  /* address mobile keyboard activation issue */
+  // const receiveLetter = document.getElementById("maskedWord");
+  // receiveLetter.focus(); 
+  // window.alert(`You pressed: ${letter}`);
 
   console.log(`You pressed: ${letter}`);
-  window.alert(`You pressed: ${letter}`);
 
-  // TODO:
-  // 1️⃣ Build a masked string using underscores for letters not yet guessed.
-  // 2️⃣ Track guessed letters and remaining attempts.
-  // 3️⃣ Detect win or loss and display a message.
-  // 4️⃣ (Bonus) Show guessed letters and progress dynamically in the console or DOM.
+  if (guessedLetters.includes(letter)) {
+    console.log(`You already guessed: ${letter}`);
+    return;
+  }
+
+  // record guesses
+  guessedLetters.push(letter);
+  console.log(`Guessed so far: ${guessedLetters.join(',')}`);
+
+  if (chosenWord.includes(letter)) {
+    console.log(`Letter ${letter} is correct`);
+    /* audio */
+    correct.play();
+  } else {
+    attemptsLeft--;
+    console.log(`Letter ${letter} is not found in our word.`);
+    /* audio */
+    wrong.play();
+  }
+  updateDisplay();
+  checkWin();
+} // end start -- main function
+
+// Choose a New Word
+function chooseNewWord() {
+  chosenWord = words[Math.floor(Math.random() * words.length)];
+  //resets
+  guessedLetters = [];
+  attemptsLeft = 10;
+  // update display
+  updateDisplay();
+}
+
+// Reveal guessed chars leaving unguessed masked "_"
+function updateDisplay() {
+  let masked = '';
+  for (let char of chosenWord) {
+    masked += guessedLetters.includes(char) ? char : '_';
+    masked += ' ';
+  } // end for .. of
+
+  maskedWordElm.textContent = masked.trim();
+  attemptsElm.textContent = attemptsLeft;
+  guessedLettersElm.textContent = guessedLetters.join(', ') || 'not yet';
+
+  // TEST
+  console.log(`Updating guessed letters: ${guessedLetters.join(', ')}`);
+
+} // end function
+
+function checkWin() {
+  const won = chosenWord.split('').every(letter => guessedLetters.includes(letter));
+  if (won) {
+    setTimeout(() => {
+      alert(`You have won! The word was ${chosenWord}.`);
+      /* audio -- you Won! */
+      youWon.play();
+      chooseNewWord();
+    }, 200);
+    return;
+  }
+  if (attemptsLeft <= 0) {
+    setTimeout(() => {
+      alert(`Game Over! Your word was ${chosenWord}.`);
+      /* audio -- you Lost! */
+      lost.play();
+      chooseNewWord();
+    }, 200);
+  }
 }
 
 // ⌨️ Listen for keyboard input when the page loads
 window.addEventListener("keydown", function (event) {
-  var key = event.key.toLowerCase();
+  let key = event.key.toLowerCase();
 
   // Only process alphabetic letters (ignore Shift, Enter, etc.)
   if (key.match(/^[a-z]$/)) {
