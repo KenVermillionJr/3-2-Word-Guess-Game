@@ -39,7 +39,7 @@ function startGame(letter) {
   //   const kbTrigger = kb.trigger("focus");
   // }
 
-  // // Vistual Keyboard Default Theme
+  // // Virtual Keyboard Default Theme
   // const Keyboard = window.SimpleKeyboard.default;
   // // initialize
   // const myKeyboard = new Keyboard({
