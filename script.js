@@ -32,13 +32,12 @@ const message = document.getElementById("message");
 // 🎮 Function students will build next
 function startGame(letter) {
 
-  /* set focus on hidden input element for keyboard on mobile */
-  const kb = document.getElementById("kb");
-  // check once DOM loading us complete
-  if (kb) {
-    const kbTrigger = kb.trigger("focus");
-  }
-
+  // /* set focus on hidden input element for keyboard on mobile */
+  // const kb = document.getElementById("kb");
+  // // check once DOM loading us complete
+  // if (kb) {
+  //   const kbTrigger = kb.trigger("focus");
+  // }
 
   /* address mobile keyboard activation issue */
   // const receiveLetter = document.getElementById("maskedWord");
@@ -95,12 +94,12 @@ function updateDisplay() {
   // TEST
   console.log(`Updating guessed letters: ${guessedLetters.join(', ')}`)
 
-  /* set focus on hidden input element for keyboard on mobile */
-  const kb = document.getElementById("kb");
-  // check once DOM loading us complete
-  if (kb) {
-    const kbTrigger = kb.trigger("focus");
-  }
+  // /* set focus on hidden input element for keyboard on mobile */
+  // const kb = document.getElementById("kb");
+  // // check once DOM loading us complete
+  // if (kb) {
+  //   const kbTrigger = kb.trigger("focus");
+  // }a
 
 } // end function
 
