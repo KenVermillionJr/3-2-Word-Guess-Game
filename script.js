@@ -97,7 +97,7 @@ function checkWin() {
       /* audio -- you Won! */
       youWon.play();
       chooseNewWord();
-    }, 200);
+    }, 2000);
     return;
   }
   if (attemptsLeft <= 0) {
@@ -106,7 +106,7 @@ function checkWin() {
       /* audio -- you Lost! */
       lost.play();
       chooseNewWord();
-    }, 200);
+    }, 2000);
   }
 }
 
