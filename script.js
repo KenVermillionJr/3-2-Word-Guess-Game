@@ -16,7 +16,7 @@ const correct = document.querySelector('#letterCorrect')
 const wrong = document.querySelector('#letterWrong')
 // wrong.play()
 const youWon = document.querySelector('#youWon')
-// won.play()
+// youWon.play()
 const lost = document.querySelector('#youLost')
 // lost.play();
 
