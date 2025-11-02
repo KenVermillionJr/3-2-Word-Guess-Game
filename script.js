@@ -39,6 +39,22 @@ function startGame(letter) {
   //   const kbTrigger = kb.trigger("focus");
   // }
 
+  // // Vistual Keyboard Default Theme
+  // const Keyboard = window.SimpleKeyboard.default;
+  // // initialize
+  // const myKeyboard = new Keyboard({
+  //   onChange: input => onChange(input),
+  //   onKeyPress: button => onKeyPress(button)
+  // });
+  // // events
+  // function onChange(input) {
+  //   document.querySelector(".input").value = input;
+  //   console.log("Input changed", input);
+  // }
+  // function onKeyPress(button) {
+  //   console.log("Button pressed", button);
+  // }
+
   /* address mobile keyboard activation issue */
   // const receiveLetter = document.getElementById("maskedWord");
   // receiveLetter.focus(); 
