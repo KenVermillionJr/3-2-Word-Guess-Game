@@ -15,6 +15,10 @@ console.log("Chosen word:", chosenWord);
 
 // 🎮 Function students will build next
 function startGame(letter) {
+
+  const receiveLetter = document.getElementById("maskedWord");
+  receiveLetter.focus();
+
   console.log(`You pressed: ${letter}`);
   // TODO:
   // 1️⃣ Build a masked string using underscores for letters not yet guessed.
