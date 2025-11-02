@@ -34,7 +34,7 @@ function startGame(letter) {
 
   // /* set focus on hidden input element for keyboard on mobile */
   // const kb = document.getElementById("kb");
-  // // check once DOM loading us complete
+  // // check once DOM loading is complete
   // if (kb) {
   //   const kbTrigger = kb.trigger("focus");
   // }
@@ -96,7 +96,7 @@ function updateDisplay() {
 
   // /* set focus on hidden input element for keyboard on mobile */
   // const kb = document.getElementById("kb");
-  // // check once DOM loading us complete
+  // // check once DOM loading is complete
   // if (kb) {
   //   const kbTrigger = kb.trigger("focus");
   // }a
