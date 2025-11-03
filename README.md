@@ -4,7 +4,7 @@ Work to complete an interactive **Word Guess Game** where players type letters o
 
 ---
 
-## Solved: <a href="https://kenvermillionjr.github.io/3-2-Word-Guess-Game/">Play Word Guess Game v.1.0</a> <br>
+## Solved: <a href="https://kenvermillionjr.github.io/3-2-Word-Guess-Game/">Play Word Guess Game v.1.0</a>
 
 ## 👤 User Story
 
